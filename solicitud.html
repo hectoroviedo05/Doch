@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Evaluación - DOCH Clínica Dental</title>
+    
+    <!-- Iconos FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/solicitud.css">
+    <script src="/js/solicitud.js"></script>
+</head>
+<body class="solicitud-page">
+
+    <main class="solicitud-container">
+        <!-- Botón Volver al historial anterior -->
+        <a href="javascript:history.back()" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Volver
+        </a>
+
+        <div class="solicitud-card">
+            <div class="solicitud-header">
+                <div class="solicitud-icon">
+                    <i class="fa-solid fa-tooth"></i>
+                </div>
+                <h1>Solicitar Evaluación Dental</h1>
+                <p>Ingresa tus datos a continuación. Recibiremos tu solicitud por correo y te contactaremos para confirmar tu hora.</p>
+            </div>
+
+            <!-- FORMULARIO DE ENVÍO -->
+            <!-- NOTA: Reemplaza "TU_FORM_ID" por tu ID de Formspree (se explica abajo) -->
+           <form action="https://formspree.io/f/xaqrlyyg" method="POST" class="solicitud-form" id="solicitudForm">
+                
+                <!-- Configuración opcional para Formspree -->
+                <input type="hidden" name="_subject" value="Nueva Solicitud de Evaluación Dental - DOCH">
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo *</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="nombre" id="nombre" placeholder="Ej: María González" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telefono">Teléfono / WhatsApp *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" name="telefono" id="telefono" placeholder="+56 9 1234 5678" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico *</label>
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" name="correo" id="correo" placeholder="ejemplo@correo.com" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="motivo">Motivo de consulta o comentario</label>
+                    <div class="input-wrapper textarea-wrapper">
+                        <i class="fa-solid fa-comment-dots"></i>
+                        <textarea name="motivo" id="motivo" rows="4" placeholder="Ej: Me interesa una evaluación general o tengo dolor en una muela..."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="btnSubmit">
+                    <i class="fa-solid fa-paper-plane"></i> ENVIAR SOLICITUD
+                </button>
+
+                <!-- Mensaje de estado al enviar -->
+                <div class="form-status" id="formStatus"></div>
+            </form>
+        </div>
+    </main>
+
+    <script src="js/solicitud.js"></script>
+</body>
+</html>

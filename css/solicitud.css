@@ -1,0 +1,271 @@
+/* ============================================
+   ESTILOS GENERALES: PÁGINA DE SOLICITUD
+============================================ */
+:root {
+    --color-acento: #0284c7;
+    --color-acento-hover: #0369a1;
+    --color-titulo: #0f172a;
+    --color-texto: #64748b;
+    --color-fondo-input: #f8fafc;
+    --color-borde: #e2e8f0;
+}
+
+.solicitud-page {
+    background: radial-gradient(circle at top, #f8fafc 0%, #e2e8f0 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.solicitud-container {
+    width: 100%;
+    max-width: 580px;
+}
+
+/* ============================================
+   BOTÓN DE VOLVER (MEJORADO)
+============================================ */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    color: var(--color-titulo);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 30px; /* Estilo píldora */
+    border: 1px solid var(--color-borde);
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-back i {
+    font-size: 14px;
+    color: var(--color-acento);
+    transition: transform 0.3s ease;
+}
+
+/* Hover del botón Volver */
+.btn-back:hover {
+    background: var(--color-titulo);
+    color: #ffffff;
+    border-color: var(--color-titulo);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.15);
+    transform: translateY(-2px);
+}
+
+.btn-back:hover i {
+    color: #ffffff;
+    transform: translateX(-4px); /* La flecha se mueve a la izquierda */
+}
+
+.btn-back:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   TARJETA CONTENEDORA
+============================================ */
+.solicitud-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    border: 1px solid var(--color-borde);
+}
+
+.solicitud-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.solicitud-icon {
+    width: 64px;
+    height: 64px;
+    background: #f0f9ff;
+    color: var(--color-acento);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 16px;
+    box-shadow: 0 8px 16px rgba(2, 132, 199, 0.12);
+}
+
+.solicitud-header h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--color-titulo);
+    margin: 0;
+}
+
+.solicitud-header p {
+    font-size: 14px;
+    color: var(--color-texto);
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+/* ============================================
+   FORMULARIO E INPUTS
+============================================ */
+.solicitud-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-titulo);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 14px;
+    color: #94a3b8;
+    font-size: 15px;
+    pointer-events: none;
+    transition: color 0.2s ease;
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+    width: 100%;
+    padding: 12px 14px 12px 42px;
+    background: var(--color-fondo-input);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    font-size: 14px;
+    color: var(--color-titulo);
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.textarea-wrapper i {
+    top: 14px;
+}
+
+.input-wrapper textarea {
+    resize: vertical;
+}
+
+/* Focus en Inputs */
+.input-wrapper input:focus,
+.input-wrapper textarea:focus {
+    outline: none;
+    border-color: var(--color-acento);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12);
+}
+
+.input-wrapper input:focus + i,
+.input-wrapper textarea:focus + i,
+.input-wrapper:focus-within i {
+    color: var(--color-acento);
+}
+
+/* ============================================
+   BOTÓN DE ENVÍO (MEJORADO)
+============================================ */
+.btn-submit {
+    width: 100%;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, var(--color-acento) 0%, var(--color-acento-hover) 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+    
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-submit i {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, var(--color-acento-hover) 0%, #075985 100%);
+    box-shadow: 0 12px 28px rgba(2, 132, 199, 0.38);
+    transform: translateY(-2px);
+}
+
+.btn-submit:hover i {
+    transform: translateX(4px) translateY(-2px);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+}
+
+.btn-submit:disabled {
+    background: #94a3b8;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* MENSAJE DE ESTADO */
+.form-status {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+.form-status.success {
+    color: #16a34a;
+}
+
+.form-status.error {
+    color: #dc2626;
+}
+
+/* RESPONSIVE */
+@media (max-width: 576px) {
+    .solicitud-card {
+        padding: 24px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

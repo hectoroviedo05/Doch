@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - DOCH Clínica Dental</title>
+    
+    <!-- Iconos FontAwesome 6 (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Hojas de Estilos CSS -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/nosotros.css">
+
+    <!-- Scripts -->
+    <script src="/js/global.js" defer></script>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER / NAVBAR (DESKTOP & MÓVIL)
+    ============================================ -->
+    <header>
+        <div class="container navbar">
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="DOCH Clínica Dental Logo">
+                <div class="logo-text">
+                    <h2>DOCH</h2>
+                    <span>CLÍNICA DENTAL</span>
+                </div>
+            </a>
+
+            <!-- NAVEGACIÓN DESKTOP -->
+            <nav class="nav-desktop">
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html" class="activo">Nosotros</a></li>
+                    <li><a href="tratamientos.html">Tratamientos</a></li>
+                    <li><a href="tecnologia.html">Tecnología</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- BOTÓN DESKTOP -->
+            <a href="solicitud.html" class="btn btn-dark navbar-btn">
+                <i class="fa-regular fa-calendar-check"></i> SOLICITAR EVALUACIÓN
+            </a>
+
+            <!-- BOTÓN HAMBURGUESA (MÓVIL) -->
+            <button class="hamburger" id="open-menu-btn" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============================================
+         MENÚ MÓVIL MODAL ESTILO APP
+    ============================================ -->
+    <div class="menu-backdrop" id="menu-backdrop"></div>
+
+    <aside class="mobile-nav-modal" id="mobile-nav-panel" aria-label="Navegación móvil">
+        <!-- Indicador visual superior tipo App -->
+        <div class="modal-drag-indicator"></div>
+
+        <button class="close-modal-btn" id="close-menu-btn" aria-label="Cerrar menú">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="mobile-modal-header">
+            <h3>Navegación</h3>
+            <p>Explora nuestros servicios clínicos</p>
+        </div>
+
+        <nav class="mobile-modal-links">
+            <a href="index.html" class="activo">
+                <i class="fa-solid fa-house"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="nosotros.html">
+                <i class="fa-solid fa-hospital-user"></i>
+                <span>Nosotros</span>
+            </a>
+            <a href="tratamientos.html">
+                <i class="fa-solid fa-tooth"></i>
+                <span>Tratamientos</span>
+            </a>
+
+            <a href="tecnologia.html">
+                <i class="fa-solid fa-microscope"></i>
+                <span>Tecnología</span>
+            </a>
+            <a href="contacto.html">
+                <i class="fa-solid fa-address-book"></i>
+                <span>Contacto</span>
+            </a>
+        </nav>
+
+        <div class="mobile-modal-divider"></div>
+
+        <div class="mobile-modal-buttons">
+            <a href="solicitud.html" class="btn btn-modal-primary">
+                <i class="fa-solid fa-calendar-check"></i> Solicitar Evaluación
+            </a>
+            <a href="https://wa.me/56942292122?text=Hola%2C+quiero+agendar+una+evaluaci%C3%B3n+" target="_blank" class="btn btn-modal-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Agendar por WhatsApp
+            </a>
+        </div>
+    </aside>
+
+    <!-- ============================================
+         CONTENIDO PRINCIPAL - NOSOTROS
+    ============================================ -->
+    <main class="page-content">
+        
+        <!-- HEADER DE PÁGINA -->
+        <section class="page-header">
+            <div class="container">
+                <span class="badge">Nuestra historia y valores</span>
+                <h1>SOBRE <span>NOSOTROS</span></h1>
+                <p>Comprometidos con la excelencia odontológica y el cuidado humano de tu sonrisa.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SOBRE LA CLÍNICA (GRID DOS COLUMNAS) -->
+        <section class="about-section">
+            <div class="container about-grid">
+                <div class="about-image">
+                    <img src="/img/Instalaciones.png" alt="Instalaciones de DOCH Clínica Dental">
+                    <div class="experience-badge">
+                        <span class="number">+3</span>
+                        <span class="text">Años de Experiencia</span>
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <h2>Innovación y calidez en cada tratamiento</h2>
+                    <p>
+                        En <strong>DOCH Clínica Dental</strong> nos hemos consolidado como un centro odontológico de referencia, guiados por la vocación de brindar atención integral en un ambiente cómodo, seguro y moderno.
+                    </p>
+                    <p>
+                        Creemos que la salud bucal impacta directamente en la calidad de vida y confianza de nuestros pacientes. Por ello, combinamos tecnología médica de última generación con una atención cálida y personalizada.
+                    </p>
+
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3>+5,000</h3>
+                            <p>Pacientes Felices</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Especialistas Certificados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MISIÓN Y VISIÓN (TARJETAS) -->
+        <section class="mv-section">
+            <div class="container mv-grid">
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3>Nuestra Misión</h3>
+                    <p>
+                        Proporcionar soluciones odontológicas de alta calidad técnica y estética, priorizando siempre la prevención, comodidad y satisfacción de cada paciente.
+                    </p>
+                </div>
+
+                <div class="mv-card">
+                    <div class="mv-icon">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3>Nuestra Visión</h3>
+                    <p>
+                        Ser la clínica dental de vanguardia líder en la región, reconocida por la excelencia profesional de nuestro equipo y el trato humano ético e innovador.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VALORES CORPORATIVOS -->
+        <section class="values-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>NUESTROS VALORES</h2>
+                    <p>Los principios que guían nuestro trabajo día a día</p>
+                </div>
+
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <h4>Empatía</h4>
+                        <p>Escuchamos a nuestros pacientes y diseñamos planes a la medida de sus necesidades.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <i class="fa-solid fa-award"></i>
+                        <h4>Excelencia</h4>
+                        <p>Capacitación continua y aplicación de estándares internacionales en salud dental.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <i class="fa-solid fa-handshake"></i>
+                        <h4>Honestidad</h4>
+                        <p>Diagnósticos transparentes y éticos con claridad en cada procedimiento.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <i class="fa-solid fa-microscope"></i>
+                        <h4>Innovación</h4>
+                        <p>Uso de equipamiento digital de última generación para resultados más precisos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 DOCH Clínica Dental. Todos los derechos reservados.</p>
+            <p class="footer-author">Desarrollado por <span>Héctor Oviedo</span></p>
+        </div>
+    </footer>
+
+</body>
+</html>

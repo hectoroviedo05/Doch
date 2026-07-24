@@ -1,0 +1,436 @@
+/* ============================================
+   1. GOOGLE FONTS & REBOOT
+============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-principal: #0f172a;
+    --color-texto: #475569;
+    --color-titulo: #0f172a;
+    --color-blanco: #ffffff;
+    --color-borde: #e2e8f0;
+    --color-hover: #1e293b;
+    --color-acento: #0284c7;
+    --color-acento-soft: #f0f9ff;
+    --transicion: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--color-texto);
+    background: var(--color-blanco);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: min(1320px, 92%);
+    margin: 0 auto;
+}
+
+/* ============================================
+   2. HEADER / NAVBAR
+============================================ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1000;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.logo h2 {
+    color: var(--color-titulo);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.logo span {
+    display: block;
+    color: #64748b;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    margin-top: 3px;
+    font-weight: 600;
+}
+
+.menu {
+    display: flex;
+    gap: 28px;
+}
+
+.menu a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    position: relative;
+    padding: 6px 0;
+    transition: var(--transicion);
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-acento);
+    border-radius: 2px;
+    transition: var(--transicion);
+}
+
+.menu a:hover,
+.menu a.activo {
+    color: var(--color-acento);
+}
+
+.menu a:hover::after,
+.menu a.activo::after {
+    width: 100%;
+}
+
+/* ============================================
+   3. BOTONES GLOBALES
+============================================ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 22px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    border-radius: 10px;
+    transition: var(--transicion);
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.btn-dark {
+    background: var(--color-principal);
+    color: var(--color-blanco);
+    border-color: var(--color-principal);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.btn-dark:hover {
+    background: var(--color-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.22);
+}
+
+.btn-outline {
+    border-color: #cbd5e1;
+    color: var(--color-principal);
+    background: var(--color-blanco);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-principal);
+    background: var(--color-principal);
+    color: var(--color-blanco);
+}
+
+/* ============================================
+   4. MENÚ MÓVIL ESTILO APP
+============================================ */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1050;
+    transition: var(--transicion);
+}
+
+.hamburger:active {
+    scale: 0.95;
+    background: #f1f5f9;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-principal);
+    border-radius: 4px;
+}
+
+/* Backdrop */
+.menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1090;
+}
+
+.menu-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Tarjeta Modal App */
+.mobile-nav-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%) scale(0.92);
+    width: calc(100% - 32px);
+    max-width: 400px;
+    background: var(--color-blanco);
+    border-radius: 24px;
+    padding: 24px 20px 20px;
+    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1100;
+}
+
+.mobile-nav-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-drag-indicator {
+    width: 36px;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    margin: 0 auto 16px;
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: #f1f5f9;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: #64748b;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transicion);
+}
+
+.close-modal-btn:hover {
+    background: #e2e8f0;
+    color: var(--color-titulo);
+}
+
+.mobile-modal-header {
+    margin-bottom: 16px;
+    text-align: left;
+    padding-left: 6px;
+}
+
+.mobile-modal-header h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--color-titulo);
+}
+
+.mobile-modal-header p {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* Enlaces con Iconos */
+.mobile-modal-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mobile-modal-links a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #334155;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 11px 14px;
+    border-radius: 12px;
+    transition: var(--transicion);
+}
+
+.mobile-modal-links a i {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    color: #94a3b8;
+    transition: var(--transicion);
+}
+
+.mobile-modal-links a:hover,
+.mobile-modal-links a.activo {
+    background-color: var(--color-acento-soft);
+    color: var(--color-acento);
+}
+
+.mobile-modal-links a:hover i,
+.mobile-modal-links a.activo i {
+    color: var(--color-acento);
+}
+
+.mobile-modal-divider {
+    height: 1px;
+    background: #f1f5f9;
+    margin: 16px 0;
+}
+
+.mobile-modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-modal-primary, 
+.btn-modal-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: var(--transicion);
+}
+
+.btn-modal-primary {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+}
+
+.btn-modal-whatsapp {
+    background-color: #25d366;
+    color: var(--color-blanco);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+}
+
+.btn-modal-whatsapp:active {
+    scale: 0.98;
+}
+
+/* ============================================
+   5. FOOTER GLOBAL
+============================================ */
+footer {
+    padding: 30px 0;
+    background: var(--color-principal);
+    color: var(--color-blanco);
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+footer p {
+    opacity: 0.8;
+    font-size: 13px;
+}
+
+.footer-author {
+    font-size: 12px;
+    opacity: 0.65;
+}
+
+.footer-author span {
+    font-weight: 700;
+    color: #38bdf8;
+}
+
+/* Responsive breakpoint */
+@media (max-width: 960px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-desktop, 
+    .navbar-btn {
+        display: none;
+    }
+}

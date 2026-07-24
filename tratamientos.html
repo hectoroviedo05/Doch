@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamientos - DOCH Clínica Dental</title>
+    
+    <!-- Iconos FontAwesome 6 (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Hojas de Estilos CSS -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/tratamientos.css">
+
+    <!-- Scripts -->
+    <script src="/js/global.js" defer></script>
+</head>
+<body>
+
+    <!-- ============================================
+         HEADER / NAVBAR (DESKTOP & MÓVIL)
+    ============================================ -->
+    <header>
+        <div class="container navbar">
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                <img src="img/logo.png" alt="DOCH Clínica Dental Logo">
+                <div class="logo-text">
+                    <h2>DOCH</h2>
+                    <span>CLÍNICA DENTAL</span>
+                </div>
+            </a>
+
+            <!-- NAVEGACIÓN DESKTOP -->
+            <nav class="nav-desktop">
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="tratamientos.html" class="activo">Tratamientos</a></li>
+                    <li><a href="tecnologia.html">Tecnología</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- BOTÓN DESKTOP -->
+            <a href="solicitud.html" class="btn btn-dark navbar-btn">
+                <i class="fa-regular fa-calendar-check"></i> SOLICITAR EVALUACIÓN
+            </a>
+
+            <!-- BOTÓN HAMBURGUESA (MÓVIL) -->
+            <button class="hamburger" id="open-menu-btn" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============================================
+         MENÚ MÓVIL MODAL ESTILO APP
+    ============================================ -->
+    <div class="menu-backdrop" id="menu-backdrop"></div>
+
+    <aside class="mobile-nav-modal" id="mobile-nav-panel" aria-label="Navegación móvil">
+        <!-- Indicador visual superior tipo App -->
+        <div class="modal-drag-indicator"></div>
+
+        <button class="close-modal-btn" id="close-menu-btn" aria-label="Cerrar menú">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="mobile-modal-header">
+            <h3>Navegación</h3>
+            <p>Explora nuestros servicios clínicos</p>
+        </div>
+
+        <nav class="mobile-modal-links">
+            <a href="index.html" class="activo">
+                <i class="fa-solid fa-house"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="nosotros.html">
+                <i class="fa-solid fa-hospital-user"></i>
+                <span>Nosotros</span>
+            </a>
+            <a href="tratamientos.html">
+                <i class="fa-solid fa-tooth"></i>
+                <span>Tratamientos</span>
+            </a>
+
+            <a href="tecnologia.html">
+                <i class="fa-solid fa-microscope"></i>
+                <span>Tecnología</span>
+            </a>
+            <a href="contacto.html">
+                <i class="fa-solid fa-address-book"></i>
+                <span>Contacto</span>
+            </a>
+        </nav>
+
+        <div class="mobile-modal-divider"></div>
+
+        <div class="mobile-modal-buttons">
+            <a href="solicitud.html" class="btn btn-modal-primary">
+                <i class="fa-solid fa-calendar-check"></i> Solicitar Evaluación
+            </a>
+            <a href="https://wa.me/56942292122?text=Hola%2C+quiero+agendar+una+evaluaci%C3%B3n+" target="_blank" class="btn btn-modal-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Agendar por WhatsApp
+            </a>
+        </div>
+    </aside>
+
+    <!-- ============================================
+         CONTENIDO PRINCIPAL - TRATAMIENTOS
+    ============================================ -->
+    <main class="page-content">
+
+        <!-- HEADER DE PÁGINA -->
+        <section class="page-header">
+            <div class="container">
+                <span class="badge">Especialidades Clínicas</span>
+                <h1>NUESTROS <span>TRATAMIENTOS</span></h1>
+                <p>Soluciones odontológicas integrales avanzadas para cuidar y renovar tu sonrisa.</p>
+            </div>
+        </section>
+
+        <!-- CATÁLOGO DE TRATAMIENTOS -->
+        <section class="treatments-section">
+            <div class="container">
+
+                <div class="treatments-grid">
+                    
+                    <!-- Tarjeta 1: Ortodoncia -->
+                    <article class="treatment-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-teeth"></i>
+                        </div>
+                        <h3>Ortodoncia & Alineadores</h3>
+                        <p>Corrección funcional y estética de la posición dental mediante brackets metálicos, cerámicos o alineadores invisibles.</p>
+                        <ul class="treatment-features">
+                            <li><i class="fa-solid fa-check"></i> Brackets Convencionales</li>
+                            <li><i class="fa-solid fa-check"></i> Ortodoncia Invisible</li>
+                            <li><i class="fa-solid fa-check"></i> Planificación 3D</li>
+                        </ul>
+                        <a href="solicitud.html" class="btn-card-action">
+                            <span>Agendar Consulta</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- Tarjeta 2: Implante Dental -->
+                    <article class="treatment-card highlighted">
+                        <span class="card-badge">Más Solicitado</span>
+                        <div class="card-icon">
+                            <i class="fa-solid fa-tooth"></i>
+                        </div>
+                        <h3>Implantes Dentales</h3>
+                        <p>Rehabilitación definitiva para la pérdida de piezas dentales con titanio de alta biocompatibilidad y coronas de porcelana.</p>
+                        <ul class="treatment-features">
+                            <li><i class="fa-solid fa-check"></i> Implante Unitario / Múltiple</li>
+                            <li><i class="fa-solid fa-check"></i> Carga Inmediata</li>
+                            <li><i class="fa-solid fa-check"></i> Aspecto 100% Natural</li>
+                        </ul>
+                        <a href="solicitud.html" class="btn-card-action">
+                            <span>Agendar Consulta</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- Tarjeta 3: Estética Dental -->
+                    <article class="treatment-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3>Diseño de Sonrisa & Estética</h3>
+                        <p>Mejoramos el color, forma y alineación visible de tus dientes con carillas de cerámica y blanqueamiento LED.</p>
+                        <ul class="treatment-features">
+                            <li><i class="fa-solid fa-check"></i> Blanqueamiento Clínico</li>
+                            <li><i class="fa-solid fa-check"></i> Carillas de Porcelana / Resina</li>
+                            <li><i class="fa-solid fa-check"></i> Limpieza Profunda Ultra</li>
+                        </ul>
+                        <a href="solicitud.html" class="btn-card-action">
+                            <span>Agendar Consulta</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- Tarjeta 4: Endodoncia -->
+                    <article class="treatment-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-microscope"></i>
+                        </div>
+                        <h3>Endodoncia (Tratamiento de Conducto)</h3>
+                        <p>Tratamiento especializado para eliminar infecciones del nervio dental, conservando la pieza natural sin dolor.</p>
+                        <ul class="treatment-features">
+                            <li><i class="fa-solid fa-check"></i> Endodoncia Mecanizada</li>
+                            <li><i class="fa-solid fa-check"></i> Anestesia Local Eficaz</li>
+                            <li><i class="fa-solid fa-check"></i> Alivio Inmediato del Dolor</li>
+                        </ul>
+                        <a href="solicitud.html" class="btn-card-action">
+                            <span>Agendar Consulta</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- Tarjeta 5: Odontopediatría -->
+                    <article class="treatment-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-child"></i>
+                        </div>
+                        <h3>Odontopediatría</h3>
+                        <p>Cuidado bucal preventivo y curativo diseñado para niños en un ambiente amigable, sin estrés ni temores.</p>
+                        <ul class="treatment-features">
+                            <li><i class="fa-solid fa-check"></i> Sellantes & Fluoración</li>
+                            <li><i class="fa-solid fa-check"></i> Control del Crecimiento Óseo</li>
+                            <li><i class="fa-solid fa-check"></i> Educación en Higiene</li>
+                        </ul>
+                        <a href="solicitud.html" class="btn-card-action">
+                            <span>Agendar Consulta</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- Tarjeta 6: Cirugía Oral -->
+                    <article class="treatment-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-briefcase-medical"></i>
+                        </div>
+                        <h3>Cirugía Oral & Muelas del Juicio</h3>
+                        <p>Extracciones quirúrgicas complejas e intervenciones de tejidos blandos realizadas con máxima precisión y rápida recuperación.</p>
+                        <ul class="treatment-features">
+                            <li><i class="fa-solid fa-check"></i> Extracción de Muelas del Juicio</li>
+                            <li><i class="fa-solid fa-check"></i> Cirugía Pre-protésica</li>
+                            <li><i class="fa-solid fa-check"></i> Cuidados Postoperatorios</li>
+                        </ul>
+                        <a href="solicitud.html" class="btn-card-action">
+                            <span>Agendar Consulta</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- BANNER DE LLAMADO A LA ACCIÓN -->
+        <section class="cta-section">
+            <div class="container cta-box">
+                <div class="cta-text">
+                    <h2>¿No estás seguro de cuál tratamiento necesitas?</h2>
+                    <p>Realizamos un diagnóstico integral computarizado en tu primera evaluación.</p>
+                </div>
+                <a href="solicitud.html" class="btn btn-dark">
+                    <i class="fa-solid fa-calendar-plus"></i> AGENDAR DIAGNÓSTICO
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================
+         FOOTER GLOBAL
+    ============================================ -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 DOCH Clínica Dental. Todos los derechos reservados.</p>
+            <p class="footer-author">Desarrollado por <span>Héctor Oviedo</span></p>
+        </div>
+    </footer>
+
+</body>
+</html>
